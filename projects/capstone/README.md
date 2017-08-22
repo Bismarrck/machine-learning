@@ -1,13 +1,28 @@
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath:[['$','$']]}});
+</script>
+<script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 # Machine Learning Engineer Nanodegree
-## Specializations
-## Project: Capstone Proposal and Capstone Project
 
-**Note**
+## Proposal
+Xin Chen  
+August 21st, 2017
 
-The Capstone is a two-staged project. The first is the proposal component, where you can receive valuable feedback about your project idea, design, and proposed solution. This must be completed prior to your implementation and submitting for the capstone project. 
+## How to obtain the datasets
 
-You can find the [capstone proposal rubric here](https://review.udacity.com/#!/rubrics/410/view), and the [capstone project rubric here](https://review.udacity.com/#!/rubrics/108/view). Please ensure that you are following directions correctly before submitting these two stages which encapsulate your capstone.
+1. QM7: [http://quantum-machine.org/datasets/#qm7][1]
+2. GDB-9: [https://www.nature.com/articles/sdata201422][2]
+3. $\mathrm{C}_9\mathrm{H}_7\mathrm{N}$
+	* `pip install ase>=3.12`
 
-You will find an `open_projects` folder in these files. This will be where pre-curated capstone projects are available, should you choose to work on a project already partially designed for you. 
+	from ase.db import connect
+	db = connect('C9H7N.PBE.db')
+	atoms = db.get_atoms('id=1')
+	print(atoms.get_total_energy())	
 
-Please email [machine-support@udacity.com](mailto:machine-support@udacity.com) if you have any questions.
+
+
+[1]:	http://quantum-machine.org/datasets/#qm7
+[2]:	https://www.nature.com/articles/sdata201422
